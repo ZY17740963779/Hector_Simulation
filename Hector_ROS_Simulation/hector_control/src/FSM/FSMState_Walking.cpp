@@ -1,5 +1,5 @@
 #include "../../include/FSM/FSMState_Walking.h"
-
+//在这里初始化double _dt, int _iterations_between_mpc
 FSMState_Walking::FSMState_Walking(ControlFSMData *data)
                  :FSMState(data, FSMStateName::WALKING, "walking"),
                   Cmpc(0.001, 40) {}

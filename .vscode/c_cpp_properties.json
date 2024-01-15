@@ -1,0 +1,32 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/zypc/iiwa_ws/devel/include/**",
+        "/home/zypc/aubo_ws/devel/include/**",
+        "/opt/ros/noetic/include/**",
+        "/opt/openrobots/include/**",
+        "/opt/openrobots/include/**",
+        "/home/zypc/aubo_ws/src/aubo_controller/include/**",
+        "/home/zypc/aubo_ws/src/aubo_driver/include/**",
+        "/home/zypc/aubo_ws/src/aubo_kinematics/include/**",
+        "/home/zypc/aubo_ws/src/aubo_msgs/include/**",
+        "/home/zypc/iiwa_ws/src/Hector_Simulation/Hector_ROS_Simulation/hector_control/include/**",
+        "/home/zypc/aubo_ws/src/my_test_pkg/include/**",
+        "/home/zypc/iiwa_ws/src/Hector_Simulation/Hector_ROS_Simulation/unitree_ros/unitree_controller/include/**",
+        "/home/zypc/iiwa_ws/src/Hector_Simulation/Hector_ROS_Simulation/unitree_ros/unitree_legged_control/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

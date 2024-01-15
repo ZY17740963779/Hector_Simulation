@@ -167,7 +167,8 @@ void ConvexMPCLocomotion::run(ControlFSMData &data)
 
   // calc gait
   gait->setIterations(iterationsBetweenMPC, iterationCounter); 
-
+  // std::cout << "iterationBetweenMPC" << ":" << iterationsBetweenMPC << std::endl;
+  // std::cout << "iterationCounter" << ":" << iterationCounter << std::endl;
   // load LCM leg swing gains
   Kp << 300, 0, 0,
       0, 300, 0,

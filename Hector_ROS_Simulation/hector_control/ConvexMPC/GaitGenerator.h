@@ -22,7 +22,7 @@ using namespace std;
  */
 
 
-class Gait
+class  Gait
 {
 public:
   Gait(int nMPC_segments, Vec2<int> offsets, Vec2<int>  durations, const std::string& name="");

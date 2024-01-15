@@ -3,12 +3,14 @@
 // ====================== GAIT Class Implementation ======================= //
 
 // Constructor: Initializes gait parameters using provided values.
+//.array() 函数在 Eigen 库中通常用于执行逐元素的数学运算
 Gait::Gait(int nMPC_segments, Vec2<int> offsets, Vec2<int> durations, const std::string &name) : _offsets(offsets.array()), 
                                                                                                  _durations(durations.array()),
                                                                                                  _nIterations(nMPC_segments)
 {
   _mpc_table = new int[nMPC_segments * 2];
-  _offsetsPhase = offsets.cast<double>() / (double)nMPC_segments;     
+  _offsetsPhase = offsets.cast<double>() / (double)nMPC_segments; 
+  //.cast<double>() 函数，它用于将矩阵或数组中的元素类型转换为 double 类型。    
   _durationsPhase = durations.cast<double>() / (double)nMPC_segments; 
   _stance = durations[0];                
   _swing = nMPC_segments - durations[0]; 
@@ -24,7 +26,7 @@ Gait::~Gait()
 
 /******************************************************************************************************/
 /******************************************************************************************************/
-
+//这里通过时间来判别状态的切换，有的则是通过力矩传感器来估计
 // Compute and return the current subphase of contact.
 Vec2<double> Gait::getContactSubPhase()
 {
