@@ -263,7 +263,6 @@ void resize_qp_mats(s16 horizon)
     free(ub_red);
     free(q_red);
   }
-
   H_qpoases = (qpOASES::real_t*)malloc(12*12*horizon*horizon*sizeof(qpOASES::real_t));
   mcount += 12*12*h2;
   g_qpoases = (qpOASES::real_t*)malloc(12*1*horizon*sizeof(qpOASES::real_t));
@@ -710,7 +709,7 @@ void solve_mpc(update_data_t *update, problem_setup *setup)
     (void)rval;
 
     int rval2 = problem_red.getPrimalSolution(q_red);
-
+    
     if (rval2 != qpOASES::SUCCESSFUL_RETURN)
       printf("failed to solve!\n");
 

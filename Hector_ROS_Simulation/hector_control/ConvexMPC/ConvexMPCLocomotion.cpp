@@ -3,10 +3,12 @@
 #include "../include/common/Math/orientation_tools.h"
 #include "ConvexMPCLocomotion.h"
 #include "convexMPC_interface.h"
+#include <fstream>
 
 using namespace ori;
 using Eigen::Dynamic;
-
+/* =========================== 保存数据 ============================= */
+std::ofstream outputFile("/home/zypc/iiwa_ws/simulation_data/ff.txt"); 
 
 /* =========================== Controller ============================= */
 ConvexMPCLocomotion::ConvexMPCLocomotion(double _dt, int _iterations_between_mpc) : 
@@ -257,7 +259,15 @@ void ConvexMPCLocomotion::run(ControlFSMData &data)
       data._legController->commands[foot].kdtoe = 0;
 
       data._legController->commands[foot].feedforwardForce = f_ff[foot];
-
+      //打印f_ff[foot]的数据到txt文件中
+      if (outputFile.is_open()) { // 检查文件是否成功打开
+        outputFile << "f_ff[foot]:" << " " ;
+        for (int i=0;i<f_ff[foot].size()-1;i++)
+        {
+          outputFile << f_ff[foot](i) << " " << "," ;
+        }
+        outputFile << f_ff[foot](f_ff[foot].size()-1) << std::endl;
+      }
       se_contactState[foot] = contactState;
 
     }
